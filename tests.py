@@ -33,6 +33,29 @@ class TestPrice(unittest.TestCase):
     def test_incorrect_value_separator(self):
         self.assertIsNone(format_price('10000,00'))
 
+    def test_value_list(self):
+        self.assertIsNone(format_price([1, 2, 3]))
+
+    def test_value_set(self):
+        self.assertIsNone(format_price(
+            set('123')
+        ))
+
+    def test_value_dict(self):
+        self.assertIsNone(format_price(
+            {
+                'price1': 100.0,
+                'price2': '200'
+            }
+        ))
+
+    def test_value_class(self):
+        class MyClass(object):
+            pass
+        self.assertIsNone(format_price(MyClass()))
+
+    def test_value_none(self):
+        self.assertIsNone(format_price(None))
 
 if __name__ == '__main__':
     unittest.main()
