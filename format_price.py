@@ -10,7 +10,7 @@ def get_cmd_params():
 def format_price(price):
     try:
         float_price = float(price)
-    except ValueError:
+    except (ValueError, TypeError):
         return None
 
     round_float_price = round(float_price, 2)
