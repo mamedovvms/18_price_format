@@ -17,14 +17,14 @@ def format_price(price):
         return None
 
     integer = int(float_price)
-    result = '{:,}'.format(integer).replace(',', ' ')
+    result_price = '{:,}'.format(integer).replace(',', ' ')
 
     if not float_price == integer:
         integer_chunk, *fractional_chunk = price.split('.')
         fractional = fractional_chunk[0].rstrip('0')
-        result += ',{}'.format(int(fractional))
+        result_price += ',{}'.format(int(fractional))
 
-    return result
+    return result_price
 
 
 def main():
