@@ -16,10 +16,11 @@ def format_price(price):
     round_float_price = round(float_price, 2)
 
     if round_float_price.is_integer():
-        result_price = '{:,}'.format(int(round_float_price)).replace(',', ' ')
+        format_string = '{:,.0f}'
     else:
-        result_price = '{:,.2f}'.format(round_float_price).replace(',', ' ')
+        format_string = '{:,.2f}'
 
+    result_price = format_string.format(round_float_price).replace(',', ' ')
     return result_price
 
 
