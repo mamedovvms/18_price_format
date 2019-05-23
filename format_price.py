@@ -11,9 +11,10 @@ def format_price(price):
 
     if not isinstance(price, str):
         return None
+
     try:
         float_price = float(price)
-    except (ValueError):
+    except ValueError:
         return None
 
     round_float_price = round(float_price, 2)
