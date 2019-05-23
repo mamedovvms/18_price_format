@@ -13,14 +13,13 @@ def format_price(price):
     except ValueError:
         return None
 
-    float_price = float(price)
-    round_float_price = float('{:.2f}'.format(float_price))
-    integer_price = int(round_float_price)
+    round_float_price = round(float_price, 2)
 
-    if round_float_price == integer_price and int(float_price):
-        result_price = '{:,}'.format(integer_price).replace(',', ' ')
+    if round_float_price.is_integer():
+        result_price = '{:,}'.format(int(round_float_price)).replace(',', ' ')
     else:
         result_price = '{:,.2f}'.format(round_float_price).replace(',', ' ')
+
     return result_price
 
 
