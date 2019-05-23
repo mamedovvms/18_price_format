@@ -8,8 +8,10 @@ def get_cmd_params():
 
 
 def format_price(price):
+
     try:
-        float_price = float(price)
+        str_price = str(price)
+        float_price = float(str_price)
     except (ValueError, TypeError):
         return None
 
