@@ -6,6 +6,9 @@ class TestPrice(unittest.TestCase):
     def test_no_fractional(self):
         self.assertEqual(format_price('3245'), '3 245')
 
+    def test_zero(self):
+        self.assertEqual(format_price('0'), '0')
+
     def test_zero_fractional(self):
         self.assertEqual(format_price('3245.00000'), '3 245')
 
@@ -56,6 +59,12 @@ class TestPrice(unittest.TestCase):
 
     def test_value_none(self):
         self.assertIsNone(format_price(None))
+
+    def test_value_bool_true(self):
+        self.assertIsNone(format_price(True))
+
+    def test_value_bool_false(self):
+        self.assertIsNone(format_price(False))
 
 if __name__ == '__main__':
     unittest.main()
