@@ -66,5 +66,8 @@ class TestPrice(unittest.TestCase):
     def test_value_bool_false(self):
         self.assertIsNone(format_price(False))
 
+    def test_value_number(self):
+        self.assertIsNone(format_price(100))
+
 if __name__ == '__main__':
     unittest.main()
