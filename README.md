@@ -10,7 +10,7 @@ To connect you need to import the function
 from format_price import format_price
 ```
 A string of numbers is passed as a function parameter. Returns a function of a ``formatted
- string`` or ``None`` if the string cannot be converted to a positive floating point number
+ string`` or ``None`` if the string cannot be converted to a floating point number.
 
 # Example
 
