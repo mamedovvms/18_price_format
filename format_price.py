@@ -9,10 +9,11 @@ def get_cmd_params():
 
 def format_price(price):
 
+    if not isinstance(price, str):
+        return None
     try:
-        str_price = str(price)
-        float_price = float(str_price)
-    except (ValueError, TypeError):
+        float_price = float(price)
+    except (ValueError):
         return None
 
     round_float_price = round(float_price, 2)
